@@ -53,13 +53,7 @@ const Quiz_Lists = () => {
               <Text style={styles.subjectName}>10 Questions</Text>
               <Text style={styles.subjectName}>1 hour 15 min</Text>
             </View>
-            <View
-              style={{
-                height: "100%",
-                alignItems: "center",
-                flexDirection: "row",
-              }}
-            >
+            <View style={styles.ratingComponent}>
               <FontAwesome5 name="star" style={styles.ratingIcon} />
               <Text
                 style={{
@@ -77,13 +71,7 @@ const Quiz_Lists = () => {
               <Text style={styles.subjectName}>10 Questions</Text>
               <Text style={styles.subjectName}>1 hour 15 min</Text>
             </View>
-            <View
-              style={{
-                height: "100%",
-                alignItems: "center",
-                flexDirection: "row",
-              }}
-            >
+            <View style={styles.ratingComponent}>
               <FontAwesome5 name="star" style={styles.ratingIcon} />
               <Text
                 style={{
@@ -95,38 +83,9 @@ const Quiz_Lists = () => {
             </View>
           </View>
           <View>
-            <Text
-              style={{
-                color: "black",
-                fontSize: 24,
-                fontWeight: "bold",
-                marginVertical: 20,
-                marginHorizontal: 20,
-              }}
-            >
-              Continue Quiz
-            </Text>
-            <View
-              style={{
-                flexDirection: "row",
-                borderRadius: 5,
-                height: 100,
-                justifyContent: "space-between",
-                marginHorizontal: 10,
-                marginTop: 20,
-                fontWeight: 300,
-                paddingHorizontal: 15,
-              }}
-            >
-              <View
-                style={{
-                  width: 130,
-                  height: 130,
-                  backgroundColor: "#c4c4c4",
-                  borderRadius: 10,
-                  alignSelf: "center",
-                }}
-              ></View>
+            <Text style={styles.continueQuizHeading}>Continue Quiz</Text>
+            <View style={styles.continueQuizContainer}>
+              <View style={styles.continueQuizThumbnail}></View>
               <View style={{ height: "100%", width: "70%" }}>
                 <View
                   style={{
@@ -138,39 +97,17 @@ const Quiz_Lists = () => {
                     <Text style={styles.subjectName}>8/10 Question</Text>
                     <Text style={styles.subjectName}>35 min</Text>
                   </View>
-                  <View
-                    style={{
-                      height: "80%",
-                      paddingTop: 10,
-                      flexDirection: "row",
-                    }}
-                  >
+                  <View style={styles.deleteIconContainer}>
                     <View style={{ flexDirection: "row" }}>
                       <FontAwesome5
                         name="trash-alt"
-                        style={{
-                          color: "#c0c0c0",
-                          fontSize: 20,
-                          marginHorizontal: 10,
-                        }}
+                        style={styles.deleteIconStyles}
                       />
                     </View>
                   </View>
                 </View>
                 <Pressable>
-                  <View
-                    style={{
-                      height: 30,
-                      width: 240,
-                      backgroundColor: "black",
-                      alignSelf: "center",
-                      borderRadius: 5,
-                      marginTop: 10,
-                      alignSelf: "center",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                  <View style={styles.continueQuizButtonContainer}>
                     <Text
                       style={{
                         color: "white",
@@ -184,19 +121,7 @@ const Quiz_Lists = () => {
               </View>
             </View>
           </View>
-          <View
-            style={{
-              marginTop: 60,
-              marginHorizontal: 100,
-              backgroundColor: "#366edd",
-              width: "90%",
-              borderRadius: 5,
-              height: 45,
-              alignSelf: "center",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <View style={styles.startQuizButtonContainer}>
             <Text style={{ color: "white", fontWeight: "600", fontSize: 16 }}>
               Start Quiz
             </Text>
@@ -344,11 +269,62 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   continueQuizThumbnail: {
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
     backgroundColor: "#c4c4c4",
     borderRadius: 10,
     alignSelf: "center",
+  },
+  ratingComponent: {
+    height: "100%",
+    paddingTop: 10,
+    flexDirection: "row",
+  },
+  continueQuizHeading: {
+    color: "black",
+    fontSize: 24,
+    fontWeight: "bold",
+    marginVertical: 20,
+    marginHorizontal: 20,
+  },
+  continueQuizContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 20,
+    marginTop: 20,
+    fontWeight: 300,
+  },
+  deleteIconContainer: {
+    height: "80%",
+    paddingTop: 10,
+    flexDirection: "row",
+  },
+  deleteIconStyles: {
+    color: "#c0c0c0",
+    fontSize: 20,
+    marginHorizontal: 10,
+  },
+  continueQuizButtonContainer: {
+    height: 30,
+    width: 240,
+    backgroundColor: "black",
+    alignSelf: "center",
+    borderRadius: 5,
+    marginTop: 10,
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  startQuizButtonContainer: {
+    marginTop: 50,
+    marginHorizontal: 100,
+    backgroundColor: "#366edd",
+    width: "90%",
+    borderRadius: 5,
+    height: 45,
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
